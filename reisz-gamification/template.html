@@ -1,0 +1,874 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/logoWes.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/cpl14-logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+	  <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+	  <p>http://reisz-gamification.appspot.com</p>
+    </hgroup>
+  </slide>
+
+  <slide class="thank-you-slide dark nobackground">
+    <article class="flexbox vleft auto-fadein" style="position: relative; top: -50px" >
+	  <p class="hcenter"><b>Wesley Reisz</b></p>
+  	  <ul>
+			<b style="position: relative; left:-50px;">HTML5:</b>
+			<li>Deep Dive into HTML5 and CSS3 <br /><a href="http://www.infoq.com/author/Wesley-Reisz">http://www.infoq.com/author/Wesley-Reisz</a></li>
+			<li>Kick Ass HTML5 <br /><a href="http://reisz-kickass.appspot.com">http://reisz-kickass.appspot.com</a></li>
+			<li>HTML5 Workshop <br /><a href="http://reisz-html5.appspot.com">http://reisz-html5.appspot.com</a></li>
+			<b style="position: relative; left:-50px;">Big Data:</b>	
+			<li>Lions and Tigers and Pig Ohh My... A Coder's Intro to Big Data <br /><a href="http://reisz-ltpom.appspot.com/">http://reisz-ltpom.appspot.com</a></li>
+			<b style="position: relative; left:-50px;">Gamification:</b>
+			<li>The Hype, Myth, and Promise of Gamification<br />
+				<a href="http://reisz-gamification.appspot.com/">http://reisz-gamification.appspot.com</a></li>	
+			</ul>
+			<b  style="position: relative; left:-18px;">University of Louisville</b>
+			<div class="columns-2">
+		        <ul>
+					<li>Android Programming, CIS490</li>
+					<li>Web Architecture, CIS411</li>
+					<br /><br /><br /><br /><br />
+		        </ul>
+		        <ul>
+		          	<p class="auto-fadein" data-config-contact>
+				      <!-- populated from slide_config.js -->
+				    </p>
+		        </ul>
+		      </div>
+    </article>
+	<article>
+		<a href="https://github.com/wesreisz"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Hype</h2>
+    </hgroup>
+    <article>
+     	<span class="build">
+	     	<img id="li-image1" src="/images/quote-bunchball.png">
+	 		<img id="li-image3" src="/images/quote-edu.png">
+			<img id="li-image2" src="/images/quote-business.png">
+			<img id="li-image4" src="/images/quote-gartner2.png">
+			<img id="li-image5" src="/images/quote-politicians.png">
+			<img id="li-image6" src="/images/quote-tech.png">
+			<img id="li-image7" src="/images/quote-jane.png">
+	    </span>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+		  <li>Half a Billion people</li>	
+          <li>3 Billion Hours weekly Playing Games Online</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Financial</h2>
+    </hgroup>
+	<article class="flexbox vcenter" style="text-align:center;">
+      <img src="/images/data.jpg" style="border:1px solid black;" width="48%">
+      <img src="/images/Gamification-Market-to-be-Worth-5.5-Billion-by-2018.jpg" style="border:1px solid black;" width="48%">
+      <footer class="source">
+	  sources: http://dailytekk.com/2013/01/14/gamification-defined/ & http://gsvcap.com/knowledge-economy/let-the-games-begin/
+	  </footer>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/curiosity.jpg)">
+	<aside class="note">
+      <section>
+        <ul>
+          <li>What does this all mean? Is it a force for good? ...a force for bad?</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Definition</h2>
+    </hgroup>
+    <article>
+      <div style="position: absolute; top: 150px; right:60px;text-align:right;width:60%">
+		<span class="italics big"><h1 style="display:inline;">"</h1>Gamification is the use of game attributes to drive game-like player behavior in a non-game context<h1 style="display:inline;">"</h1></span>
+	</article>
+	 <article style="position: relative; top: 150px;">
+		<ul class="build fade">
+			<li>The use of <b>game attributes</b>, which includes game mechanics/dynamics, game design principles, gaming psychology, player journey, game play scripts and storytelling, and/or any other aspects of games</li>
+			<li>To drive <b>game-like player behavior</b>, such as engagement, interaction, addiction, competition, collaboration, awareness, learning, and/or any other observed player behavior during game play</li>
+			<li>In a <b>non-game context</b>, which can be anything other than a game (e.g. education, work, health and fitness, community participation, civic engagement, volunteerism, etc.)</li>
+		</ul>	
+	  </div>
+     </article>
+	 <footer class="source">http://lithosphere.lithium.com/t5/science-of-social-blog/What-is-Gamification-Really/ba-p/30447</footer>
+  </slide>
+
+
+  <slide class="fill nobackground" style="background-image: url(images/meme.jpg)">
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Myth (What Gamification is NOT)</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li><b>Dropping Badges on Players</b>: Gamification is not about just throwing game mechanics at a problem in the hope that engagement improves</li>
+        <li><b>Offering Prize Incentives</b>: Gamification is also not the use of prizes (or other external incentives) to drive action</li>
+        <li><b>Conditioning / Compulsion does not equal engagement</b></li>
+        <li><b>They'll Figure it out</b>: No clearly defined objective or goal... it's pretty difficult to gamify it</li>
+		<li><b>Gamification is not a game</b>: It's about using game attributes to drive game-like player behavior/positive pyschology</li>
+      </ul>
+    </article>
+	<aside class="note">
+      <section>
+       	 <ul>
+	          <li>the best ideas from games to capture that engagement we had when we were all playing massively multiplayer thumbwrestling</li>
+			  <li>Gabe Zicherman book The Gamification Revolution said Think about gamifying your process like icing on a cake, if the underlying cake is tasteless or bad, no amount of frosting will make it better.</li>
+			  <li>The goal isn't 
+			to win, it's to develop steady game play over long periods of time, drawing players
+			back in to play time and time again for enjoyable and engaging experiences.</li>	
+	        </ul>
+	        The key to successful gamification is taking these intrinsic motivators and capturing them in our apps.
+	      </section>
+        The key to successful gamification is taking these intrinsic motivators and capturing them in our apps.
+      </section>
+    </aside>    
+  </slide>
+
+   <slide>
+	<hgroup>
+      <h2>Why Now: Key Enablers</h2>
+    </hgroup>
+    <article class="smaller">
+	  <div class="halign">
+		<img src="/images/venn-gamification.png" style="float: left;">
+			<div style="text-align: right; font-size: smaller; font-style:italic">
+	    	"They’re finding that big data and motivational science combine to create a kind of “cold fusion” for loyalty – one that generates an endless supply of motivation. With gamification, they channel that motivation in ways that drive their business performance."<br /><b>-Rajat Paharia</b> 
+			</div>	
+	  </div>
+	  <div style="clear:both;">
+      <ul>
+        <li><b>Big Data</b>: We have all become walking data generators. Applications, social networks and websites constantly throw off data whenever we use them. Taken as a whole, that data shows conclusively what interests and motivates us. Companies like Facebook, Amazon and Netflix already understand this and they make use of it constantly.</li>
+		<li><b>Motivation Science</b>: behavioral studies reveal that a core set of intrinsic and powerful motivators exists in all of us. These motivators are ever present and they can always be stimulated by the right experience – especially an experience that’s customized to a particular person’s interests and activities. And that’s where big data fits in.</li>
+      </ul>
+    </article>
+    <aside class="note">
+      <section>
+		We have all become walking data generators. Applications, social networks and websites constantly throw off data whenever we use them. Taken as a whole, that data shows conclusively what interests and motivates us. Companies like Facebook, Amazon and Netflix already understand this and they make use of it constantly. They know what you want sometimes before you know yourself. Those three companies aren’t alone – a recent survey by CSO Insights and Lattice Engines found 71 percent of companies understand the importance of big data, but only 16 percent are taking advantage of it. Gamification presents an opportunity to harness that growing stream of information in ways that drive business results.
+
+		Big data is a crucial ingredient in the secret sauce of gamification, but we need something else. And that something is motivational science.
+		</section>
+	</aside>
+  </slide>
+
+
+  <slide class="fill nobackground" style="background-image: url(images/mmtw.jpg)">
+    <hgroup>
+      <h2 class="white">Monochrom's Massively Multiplayer Thumbwrestling</h2>
+    </hgroup>
+    <footer class="source white">http://www.monochrom.at/daumen/netzwerk-eng.htm<br />
+	http://www.youtube.com/watch?v=SjsG-NgmleA</footer>
+	<aside class="note">
+      <section>
+		<ul>
+			<li>Monochrom is an art-technology-philosophy group having its seat in Vienna and Zeta Draconis. monochrom is an unpeculiar mixture of proto-aesthetic fringe work, pop attitude, subcultural science, context hacking and political activism. monochrom has existed in this (and almost every other) form since 1993.</li>
+			<li>Jane McGonigal: Massively multi-player… thumb-wrestling: <a href="http://www.ted.com/talks/jane_mcgonigal_massively_multi_player_thumb_wrestling.html">http://www.ted.com/talks/
+				jane_mcgonigal_massively_multi_player_
+				thumb_wrestling.html</a></li>
+		
+		</section>
+	</aside>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>Positive Emotions During "MMTW"</h2>
+    </hgroup>
+    <article>
+		<div class="columns-2">
+	        <ul>
+				<li>Joy</li>
+				<li>Relief</li>
+				<li>Love</li>
+				<li>Surprise</li>
+				<li>Pride</li>
+	        </ul>
+	        <ul>
+	         	<li>Curiosity</li>
+				<li>Excitement</li>
+				<li>Awe & Wonder</li>
+				<li>Contentment</li>
+				<li>Creativity</li>
+	        </ul>
+	      </div>
+		<section>
+			<ul class="build" style="padding-left: 150px">
+				<li>
+					<ul><b style="position: relative; left: -75px">Best Games Often Wrap Around:</b>
+						<li>mystery / curiosity</li>
+						<li>mastery</li>
+						<li>mental challenge</li>
+						<li>narrative</li>
+						<li>novelty</li>
+						<li>flow (Rythm in Play, then slowly <br />demand players perform faster)</li>
+					</ul>
+				</li>	
+			</ul>
+		</section>
+    </article>
+    <aside class="note smaller">
+      <section>
+		Jane McGonigal has distanced her work from the label gamification, listing rewards outside of gameplay as the central idea of gamification and distinguishing game applications where the gameplay itself is the reward under the term "gameful design".
+		</section>
+	</aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Motivation Science</h2>
+    </hgroup>
+    <article>
+		<div>
+			<p>5 Key Intrinsic Motivators (from Loyalty 3.0 Rajat Paharaia)</p>
+	        <ul class="build fade">
+				<li><b>Autonomy (“I control”)</b>: The urge to control our own lives.</li>
+				<li><b>Mastery (“I improve”)</b>: The desire to get better at something that matters.</li>
+				<li><b>Purpose (“I make a difference”)</b>: Do something larger than ourselves.</li>
+				<li><b>Progress (“I achieve”)</b>: The desire to see mastery towards a certain result.</li>
+				<li><b>Social Interaction (“I connect with others”)</b>: The need to belong and be connected with others.</li>
+	        </ul>
+	      </div>	
+    </article>
+	<footer class="source">Loyalty 3.0: http://www.loyalty30.com/</footer>
+	<aside class="note">
+      <section>
+        <ul>
+		  I would suggest each of you felt these intrinsic motivators just now:
+          <li>Autonomy: You created your own node of thumb wrestling and figured out how to link everyone together</li>
+		  <li>Mastery: Yes, you can improve. Go watch Jane's TED Talk to learn about the different levels of achievement and even some tips
+			  on how to become Legendary Grandmasters</li>
+		  <li>Purpose: This one is a little harder... did you make a difference. Heck, yes you did. You helped me create an atmosphere here
+			   where I can try to get my point across.</li>	
+		  <li>Progress: Again, Jane goes through the various levels and progressing up to 
+			  Legendary Grandmasters</li>	
+		  <li>Social Interaction: You each connected with each other by literally holding hands.</li>	
+        </ul>
+        The key to successful gamification is taking these intrinsic motivators and capturing them in our apps.
+      </section>
+    </aside>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>Game Mechanics You Can Use Today</h2>
+    </hgroup>
+   <article>
+		<div class="columns-2">
+	        <ul>
+				<li>Fast Feedback</li>
+				<li>Transparency</li>
+				<li>Goals</li>
+				<li>Badges</li>
+				<li>Leveling Up</li>
+	        </ul>
+	        <ul>
+	         	<li>Onboarding</li>
+				<li>Competition</li>
+				<li>Collaboration</li>
+				<li>Community</li>
+				<li>Points</li>
+	        </ul>
+	      </div>
+    </article>
+	<footer class="source">Loyalty 3.0: http://www.loyalty30.com/</footer>
+	<aside class="note">
+      <section>
+		Rajat Paharia suggests that while these things are inherently extrinsic they tie to the intrinsic motivators we just discussed. It's in that
+		space that we create more gameful environments that Jane McGonigal suggests. The key thing to remember is it is the intrinsics that truly
+		motivate us. These are just some of the mechanics we can use to get there.
+		</section>
+	</aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Fast Feedback</h2>
+	 </hgroup>
+     <article class="smaller">
+		 <center>
+		  	<a href="http://blog.linkedin.com/wp-content/uploads/2012/09/notifications.jpg"><img src="/images/linkedin-notifications.jpg" width="600" height="300" alt="Linked in Notifications" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Mastery, Progress
+		  </center>
+		  <ul>
+			<li>Everytime you take action, you get instance feedback. Positive feedback reinforces behavior, negative teaches you to learn to adjust</li>
+			<li>Slow feedback loops discount you from the action</li>
+			<li>Can be used to take the next action</li>
+			<li>In our apps, feedback can be provided as <b>growler messages, toast, and even activity feeds</b></li>
+		  </ul>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Transparency</h2>
+    </hgroup>
+   	<article class="smaller">
+		 <center>
+		  	<a href="http://www.bunchball.com/products/nitro-salesforce"><img src="/images/salesforce_gamification1.png" width="600" height="300" alt="nitro for salesforce" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Progress, Social Interaction
+		  </center>
+		  <br />
+		  <ul>
+			<li>Crunch the numbers and let users see them as a part of the larger community and their groups of friends (or associates)</li>
+			<li>Show realtime progress through goals</li>
+			<li>Motivating people through the use of data</li>
+			<li>Show profile information, leaderboards, and statics</li>
+		  </ul>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Goals</h2>
+    </hgroup>
+    <article class="smaller">
+		 <center>
+		  	<a href="http://freshdesk.com/scaling-support/gamification-support-help-desk"><img src="/images/quests.png" width="600" height="300" alt="Freshdesk's Customer Services Goals" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Purpose, Progress, Social Interaction
+		  </center>
+		  <br />
+		  <div class="columns-2">
+		  <ul>
+				<li>Have a tangible goal to reach for</li>
+				<li>Should Include:
+					<ul>
+						<li>What needs to be done</li>
+						<li>Time Before it expires</li>
+						<li>Progress Indicators</li>
+						<li>Reward for completing</li>
+						<li>Others in the community working on the same goal</li>
+							
+					</ul>	
+				</li>
+				<li>Personalized to business units or event individuals</li>
+			  </ul>
+		</div>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Badges</h2>
+    </hgroup>
+    <article class="smaller">
+		 <center>
+		  	<a href="https://coderwall.com/wesreisz"><img src="/images/coderwall.png" border="0" width="600" height="300" alt="Coderwall's Badges from Github Repos" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Mastery, Progress, Social Interaction
+		  </center>
+		  <br />
+		  <div>
+		  <ul>
+				<li>Taps into peoples desire to collect and complete sets</li>
+				<li>Show off accomplishments to peers</li>
+				<li>Generate surprise when earning a badge that they didn't know existed</li>
+			  </ul>
+		</div>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Leveling Up</h2>
+    </hgroup>
+    <article class="smaller">
+		 <center>
+		  	<a href="http://blog.freelancer.com/uncategorized/get-rewarded-while-you-work-introducing-freelancer-com-rewards/"><img src="/images/level_up_freelancer.jpg" border="0" width="600" alt="Levels at Freelancers" style="border:1px solid black;"/></a><br /><br />
+		 	<b>Intrinsic Motivators</b>: Mastery, Progress, Purpose, Social Interaction
+		  </center>
+		  <br />
+		  <div>
+		  <ul>
+			<li>Been around for a while... frequent flier award levels or VIP programs</li>
+			<li>Job Title, Office, Influence, Salary</li>
+			<li>Recognize Users and give more access for their levels</li>
+		  </ul>
+		</div>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Onboarding</h2>
+    </hgroup>
+    <article>
+		 <center>
+		  	<a href="http://customdesigntools.com/onboarding-techniques-and-examples-for-your-new-users/"><img src="/images/tumbler-onboarding.png" border="0" width="600" alt="Onboarding @ Tumbler" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Mastery<br />
+		  </center>
+		  <ul>
+			<li>Onboarding is about teaching users the rules and tools to interact with your software. It ends 
+				once a user has some basic mastery of the tools.</li>
+			<li>Games don't just drop you in and expect you to know how to play</li>
+			<li>Quickly build trust, competence, and stay motivated</li>
+			<li>Early on when a customer is new gamification can have a huge impact</li>
+		</ul>	
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Competition</h2>
+    </hgroup>
+    <article class="smaller">
+		 <center>
+		  	<a href="http://www.bunchball.com/products/nitro-salesforce"><img src="/images/nitrosf_ss_2.jpg" width="600" height="300" alt="nitro for salesforce" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Mastery, Social Interaction
+		  </center>
+		  <br />
+		  <div class="columns-2">
+		 	 <ul>
+				<li>Games foster excellence and achievement through competition</li>
+				<li>We see it even in our development practices with Scrum teams</li>
+				<li>Competition isn't right for every community</li>
+				<li>Motivating people through peer competition</li>
+				<li>
+					<ul>
+						<li>Shrink the Context</li>
+						<li>Show me</li>
+						<li>Use different Timeframes</li>
+					</ul>	
+				</li>
+			  </ul>
+		  </div>	
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Collaboration</h2>
+    </hgroup>
+    <article class="smaller">
+		 <center>
+		  	<img src="/images/community.jpg" width="600" height="300" alt="Stack Overflow" style="border:1px solid black;"/><br />
+		 	<b>Intrinsic Motivators</b>: Purpose, Social Interaction
+		  </center>
+		  <br />
+		  <div>
+		 	 <ul>
+			    <li>This is the Web 2.0 things: Harness the power of community for collaboration</li>
+				<li>Work together to solve a common problem</li>
+				<li>Provides the ability to connect and bond with others</li>
+				<li>Teams can be extremely effective... teams work together to beat other teams</li>
+				<li>When people are on teams, they are not focused on themselves but the entire team</li>
+			 </ul>
+		  </div>	
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Community</h2>
+    </hgroup>
+    <article class="smaller">
+		 <center>
+		  	<a href="http://meta.stackoverflow.com/questions/139934/is-stack-overflow-a-collaborative-or-cooperative-platform"><img src="/images/facebook-feed.jpg" width="600" height="300" alt="Facebook NewsFeed" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Purpose, Social Interaction
+		  </center>
+		  <br />
+		  <div class="columns-2">
+		 	 <ul>
+		     	<li>We are social creatures</li>
+				<li>Little of what we talked about can be here without community</li>
+				<li>Profile Ambient awareness through News / Activity Feeds:</li>
+				<ul>
+					<li>Spread the word about accomplishments</li>
+					<li>Surface and promote people</li>
+					<li>Establish social norms</li>
+					<li>Let you know what your team or inner circle are doing</li>
+				</ul>	
+			 </ul>
+		  </div>	
+    </article>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>Points</h2>
+    </hgroup>
+   	<article class="smaller">
+		 <center>
+		  	<a href="http://careers.stackoverflow.com/spolsky"><img src="/images/points.png" width="600" height="300" alt="Stackover Flow Profile" style="border:1px solid black;"/></a><br />
+		 	<b>Intrinsic Motivators</b>: Progress, Social Interaction
+		  </center>
+		  <br />
+		  <div>
+		 	 <ul>
+		     	<li>A Number that indicates how much of something you have</li>
+				<li>Provides a way of keeping score</li>
+				<li>To a business it's a way of scoring customers engagement</li>
+			 </ul>
+		  </div>	
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Bringing all these together...<br /> it's the total strategy that makes gamification</h2>
+      <article class="smaller">
+		<div class="halign" >
+			<img src="/images/venn-gamification.png" style="float: left;margin:30px;">
+				<br /><br /><br />
+				<ul>
+					<li>
+					The key thing here is many of these are extrinsic rewards... we don't play games for extrinsic rewards. We play them
+					for intrinsic reasonings. We play them because we simply enjoy them. 
+					</li>
+					<li>A leaderboard is an extrinsic rewards, but the feeling of accomplishment and engagement goes up as I advance my positioning.
+					Make no mistake tho: <b>Intrinsic rewards beats Extrinsic rewards</b>.
+					</li>
+				</ul>	
+		  </div>
+		  <div style="clear:both;">
+		  <ul>
+			<li>
+				It's the collection of these things that help create, if not "gameful design," then perhaps something that approaches it.
+				And at it's heart is a systems designed to influence intrinsic rewards from external ones. 
+			</li>	
+	      </ul>
+	  </article>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/fist-pump-baby.jpg)">
+    <hgroup>
+      <h2 class="white">Success Stories</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Nike+</h2>
+    </hgroup>
+    <article class="smaller">
+		<a href="http://nikeplus.nike.com/plus/products/gps_app/"><img src="/images/1383_nikerunning.jpg" style="float:left;border:1px solid black;margin-right: 35px;"></a>
+		<div>
+			<ul>
+				<li>Nike Digital Sport, a new division the company launched in 2010</li>
+				<li>Aims to develop devices and technologies that allow users to track their personal statistics in any sport in which they participate</li>
+				<li>18 Million Members (before Android)</li>
+				<li>Logs workout to Nikeplus.com, where users can store and analyze the data, get training tips, and share workouts with friends</li>
+			</ul>	
+		</div>	
+    </article>
+  </slide>
+
+  <slide>
+	<article class="smaller">
+      <table>
+        <tr>
+          <th>Mechanic</th><th>Success</th><th>Description</th>
+        </tr>
+        <tr>
+          <td>Fast Feedback</td><td><img src="/images/box_yes.png"></td><td>Constant feedback... even has things like powersong for extra modivation and cheers when friends like your post <a href="http://support-en-us.nikeplus.com/app/answers/detail/article/nikerunapp-cheer/a_id/29203">Example</a></td>
+        </tr>
+		<tr>
+         <td>Transparency</td><td><img src="/images/box_yes.png"></td><td>Allows you to share and see workouts of your friends and see your stats <a href="http://www.geekzone.co.nz/images/reviews/Nike/ScreenShot002.jpg">Example</a></td>
+        </tr>
+		<tr>
+         <td>Goals</td><td><img src="/images/box_yes.png"></td><td>Allows you to set goals and earn badges as you complete goals and reach milestones <a href="http://support-en-us.nikeplus.com/app/answers/detail/article/nikeplus-goals/a_id/31736">Example</a></td>
+        </tr>
+		<tr>
+         <td>Badges</td><td><img src="/images/box_yes.png"></td><td>Allows you to set goals and earn badges as you complete goals and reach milestones <a href="http://www.garcard.com/nikeplus.php">Example</a></td>
+        </tr>
+		<tr>
+         <td>Leveling Up</td><td><img src="/images/box_yes.png"></td><td>As you accumulate more miles, Nike+ recognizes your achievement by moving you up to the next level. <a href="http://support-en-us.nikeplus.com/app/answers/detail/a_id/34026/p/3169,3575">Example</a></td>
+        </tr>
+		<tr>
+         <td>Onboarding</td><td><img src="/images/box_yes.png"></td><td>The app (and site) walks you through setting up your account, using the app, and linking with friends <a href="/images/nike_onboarding.png">Example</a></td>
+        </tr>
+		<tr>
+         <td>Competition</td><td><img src="/images/box_yes.png"></td><td>Nike+ Challenges: A fun way to connect and compete with your Nike+ Friends. <a href="http://support-en-us.nikeplus.com/app/answers/detail/a_id/32082/p/">Example</a></td>
+        </tr>
+		<tr>
+         <td>Collaboration</td><td><img src="/images/box_yes.png"></td><td>Nike+ Challenges: A fun way to connect and compete with your Nike+ Friends. <a href="http://support-en-us.nikeplus.com/app/answers/detail/a_id/32082/p/">Example</a></td>
+        </tr>
+		<tr>
+         <td>Community</td><td><img src="/images/box_yes.png"></td><td> You build a network of friends that can help motivate and challenge you <a href="https://secure-nikeplus.nike.com/plus/">Example</a></td>
+        </tr>
+		<tr>
+         <td>Points</td><td><img src="/images/box_yes.png"></td><td>NikeFuel NikeFuel is a single, universal way to measure all kinds of activities—from your morning workout to your big night out. Uniquely designed to measure whole-body movement no matter your age, weight or gender, NikeFuel tracks your active life. <a href="http://nikeplus.nike.com/plus/what_is_fuel/">Example</a></td>
+        </tr>
+      </table>
+    </article>
+	<aside class="note valign">
+      <center>
+		<img src="/images/nike_onboarding.png">
+	  <center>
+	</aside>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>Nike+ Results:</h2>
+    </hgroup>
+    <article>
+		<center>
+			<a href="https://secure-nikeplus.nike.com/plus/"><img src="/images/nike.png" ></a>
+		</center>
+		<br />
+		<div>
+			<ul>
+				<li>Fastcompany's #1 Most Innovative Company of the Year for 2013</li>
+				<li>"Nike has broken out of apparel and into tech, data, and services, which is so hard for any company to do," says Forrester Research analyst Sarah Rotman Epps.</li>
+				<li>Nike's spending on TV and print advertising in the U.S. has dropped by 40% in just three years, even as its total marketing increased to record $2.4 billion last year.</li>
+				<li>"Gone is the reliance on top-down campaigns celebrating a single hit -- ...like Tiger Woods"</li>
+				<li>18 Million Members (before Android's Number... Android was recently released)</li>
+			</ul>	
+		</div>	
+    </article>
+	<aside class="note">
+      <section class="smaller">
+		<ul>
+			<li>Aims to develop devices and technologies that allow users to track their personal statistics in any sport in which they participate</li>
+		</ul>	
+	  </section>
+	</aside>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>Other Awesome Examples Worth Mentioning</h2>
+    </hgroup>
+    <article class="smaller">
+		<ul class="build">
+			<li><b>Job Interview Knack</b></li>
+				<ul>
+					<li>“The total number of points doesn’t count. It’s how you play. The score only serves as a motivator. The objective is to reveal each candiate’s personality, ability and, above all, their inclinations,” Guy Halfteck, CEO and founder of Knack</li>
+				</ul>
+			</li>	
+			<li><b>Speed Camera Lottery (Gabe Zichermann)</b></li>
+				<ul>
+					<li>In sweden, your ticket is not based on how fast you are going its based on how much money you make. Kevin Richardson reimagine it</li>	
+					<li>Effect of dropping speed by over 20% at the point of intervention</li>
+				</ul>	
+			<li><b>Ananth Pai, Gamified Learning (Gabe Zichermann)</b></li>
+				<ul>
+					<li>Business Person who worked in engineering. Went back and got a masters in education because he saw a problem in education</li>
+					<li>Took over a class at White Bear Lake Elementary School. Replaced the standard curriculum with a video game based curriculum</li>	
+					<li>Standard off-the-shelve Nintendo DS and Computer Games to learn Reading and Math</li>
+					<li>Space of 18 Weeks Went from a below 3rd grade level in reading and math. To a mid 4th grade level</li>
+					<li>Learning is fun!</li>
+				</ul>
+			</li>	
+		</ul>	
+    </article>
+	<aside class="note">
+      <section class="smaller">
+		<ul>
+			<li>Job Interview Knack</li>
+				<ul>
+					<li>Without ever meeting anyone and without knowing who was ultimately hired and who wasn’t, Knack tested the candidates with their game and gave Shell a list of 10 percent of the candidates with the greatest potential. It was precisely that 10 percent who, over time, proved to have the most innovative ideas.“Now we’re negotiating a contract with Shell to develop an algorithm that will help it find the best engineering students in America,” Halfteck says.</li>
+			  <li>http://www.ilsole24ore.com/art/english-version/2014-01-09/farewell-job-interview-hello-video-game-050111.shtml</li>
+			  <li>http://fora.tv/2011/09/16/Ananth_Pai_
+				Gamifying_the_Classroom</li>
+					
+		</ul>	
+	  </section>
+	</aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/gamers.gif)">
+	<hgroup>
+      <h2 class="white">The Promise of Gamification</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Summary</h2>
+    </hgroup>
+    <article>
+		<ul class="build smaller">
+			<li>Gamification is not just about games.</li>
+			<li>"Gamification is the use of game attributes to drive game-like player behavior in a non-game context."</li>
+			<li>Intrinsic > Extrinsic</li>	
+			<li>Key Instrinsic Reasons to Game
+				<ul>
+					<li><b>Autonomy (“I control”)</b>: The urge to control our own lives.</li>
+					<li><b>Mastery (“I improve”)</b>: The desire to get better at something that matters.</li>
+					<li><b>Purpose (“I make a difference”)</b>: Do something larger than ourselves.</li>
+					<li><b>Progress (“I achieve”)</b>: The desire to see mastery towards a certain result.</li>
+					<li><b>Social Interaction (“I connect with others”)</b>: The need to belong and be connected with others.</li>
+				</ul>	
+			</li>
+			<li>Key Enablers
+				<ul>
+					<li>Big Data / Motivation Science</li>
+				</ul>	
+			</li>
+			<li>Gamification movement may focus on the mechanics, but NEVER forget the real reasons we game</li>			
+		</ul>	
+    </article>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>References</h2>
+    </hgroup>
+   <article class="smaller">
+		<span style="float: left; width:30%;">
+			<img src="/images/jane.jpg" height="300px">
+			<ul>
+				<b>Jane McGonigal</b><br /> (@AvantGame)
+				<li>Reality is Broken <a href="http://www.amazon.com/Reality-Is-Broken-Better-Change/dp/0143120611">Find it</a></li>
+				<li>TED Talks <a href="http://www.ted.com/speakers/jane_mcgonigal.html">Watch Them</a></li>
+				
+			</ul>	
+		</span>
+		<span style="float: left; width:30%">
+			<img src="/images/rajat.jpg" height="300px">
+			<ul>
+				<b>Rajat Paharia</b><br /> (@rajatrocks)
+				<li>Loyalty 3.0 <a href="http://www.loyalty30.com/">Find it</a></li>
+			
+			</ul>			
+		</span>
+			<span style="float: left; width:30%; ">
+				<img src="/images/gabe.jpg" height="300px">	
+				<ul>
+					<b>Gabe Zichermann</b><br /> (@gzicherm)
+					<li>The Gamification Revolution: How Leaders Leverage Game Mechanics to Crush the Competition <a href="http://www.amazon.com/Gamification-Revolution-Leverage-Mechanics-Competition/dp/0071808310/ref=la_B002W1MUQW_1_1?s=books&ie=UTF8&qid=1393177402&sr=1-1">Find it</a>
+					<li>TED Talks <a href="http://www.ted.com/speakers/gabe_zichermann.html">Watch Them</a></li>	
+				</ul>	
+			</span>
+    </article>
+  </slide>
+
+  <slide>
+	<article class="smaller">
+		<div class="columns-2">
+	        <ul>
+				<li>When NOT to use Gamification?, http://www.epicwinblog.net/2013/04/when-not-to-use-gamification.html</li>
+				<li>Bing Gordon: Every Startup CEO Should Understand Gamification http://techcrunch.com/2011/06/30/bing-gordon-every-startup-ceo-should-understand-gamification/</li>
+				<li>http://leveleleven.com/2013/11/10-great-quotes-dreamforce-2013s-gamification-forum/</li>
+				<li>Gamification by Design: Implementing Game Mechanics in Web and Mobile Apps Paperback by Gabe Zichermann</li>
+				<li>What is Gamification, Really?, http://lithosphere.lithium.com/t5/science-of-social-blog/What-is-Gamification-Really/ba-p/30447</li>
+				<li>This is not a game: Why gamification is becoming a multi-billion dollar way to motivate people: http://pando.com/2013/11/19/this-is-not-a-game-why-gamification-is-becoming-a-multi-billion-dollar-way-to-motivate-people/</li>
+				<li>We Don't Need No Stinking Badges: http://www.gdcvault.com/play/1014576/We-Don-t-Need-No</li>
+				<li>Nike's new marketing mojo: http://management.fortune.cnn.com/tag/nike-fuelband/</li>
+				<li>Nike+ now has over 18m members tracking their exercise with a FuelBand, SportWatch or fitness app: http://thenextweb.com/insider/2013/08/21/nike-now-has-18m-members-logging-their-daily-exercise-with-a-fuelband-sportwatch-or-fitness-app/#!wXLUWM</li>
+				<li>Farewell Job Interview: Hello Video Game: http://www.ilsole24ore.com/art/english-version/2014-01-09/farewell-job-interview-hello-video-game-050111.shtml</li>
+				<li>NIKE: THE NO. 1 MOST INNOVATIVE COMPANY OF 2013: http://www.fastcompany.com/most-innovative-companies/2013/nike</li>
+				<li>Skinner Box (Extra Credits): http://www.youtube.com/user/ExtraCreditz?feature=watch</li>
+				<li>Gamifying the Classroom: http://fora.tv/2011/09/16/Ananth_Pai_Gamifying_the_Classroom</li>
+	        </ul>
+	      </div>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/most-interesting-man-intrinsic.jpg)">
+  </slide>
+
+  <slide class="thank-you-slide dark nobackground">
+    <article class="flexbox vleft auto-fadein">
+	 <aside class="gdbar right"><img src="images/cpl14-logo.png"></aside>
+	    <article class="flexbox vleft auto-fadein">
+	      <h2>&lt;Thank You!&gt;</h2>
+	      <br /><br />
+	      <div class="author">
+	        Wesley Reisz
+	      </div>
+		<ul>
+			<p class="auto-fadein" data-config-contact=""><br>
+				<span>pres</span><a href="http://reisz-gamification.appspot.com/">reisz-gamification.appspot.com</a><br>
+				<span>twitter</span><a href="http://twitter.com/@wesreisz">@wesreisz</a><br>
+				<span>www</span><a href="http://www.wesleyreisz.com">www.wesleyreisz.com/</a><br>
+				<span>email</span>wes@wesleyreisz.com<br>
+				<span>github</span><a href="http://github.com/wesreisz">github.com/wesreisz</a>
+			</p>
+		 </ul>
+	    </article>
+	  </aside>
+    </article>
+	<article>
+		<a href="https://github.com/wesreisz"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/logoWes.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-35519039-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
