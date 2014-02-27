@@ -1,0 +1,4 @@
+<strong>What do you mean it's not All Fun & Games? The Hype, Myth, and Promise of Gamification</strong>
+<p>
+Jane McGonigal in her book Reality is Broken reports that we are spending 3 billion hours online gaming each week. Why is that? What is the trend driving more and more Americans online for their entertainment? ...but, more importantly, what does this mean for application developers? How can we tap into the huge market represented by this movement online? What is the state of the art around the toolkits and technologies available to help? In this talk, we explore the hype and reality around gamification and then dive into code to see if we can realize some of the promises of gamification.
+</p>
